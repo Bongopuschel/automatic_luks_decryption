@@ -25,15 +25,16 @@ Platz am Ende des LVM-PV schaffen und Dateisystem um 1GiB verkleinern:
 ```bash
 ~# vgchange -ay vg-system
 ~# mount /dev/vg-system/lv-root /mnt
-~# btrfs filesystemm resize -1G /mnt
+~# btrfs filesystem resize -1G /mnt
 ~# umount /mnt
-~# lvredurce -L -1G /dev/vg-system/lv-root
-~# pvresize --setphisicalvolumesize 450G /dev/nvme0n1p3
+~# lvredruce -L -1G /dev/vg-system/lv-root
+~# pvresize --setphysicalvolumesize 450G /dev/nvme0n1p3
 ~# vgchange -an
 ```
 LVM Verschluesseln:
 ```bash
-~# cryptsetup reencrypt --encrypt --type luks2 --cipher aes-xts-plain64 --key-size 512 --pbkdf argon2id --iter-time 3000 --reduce-device-size 32M /dev/nvme0n1p3
+~# cryptsetup reencrypt --encrypt --type luks2 --cipher aes-xts-plain64 \
+--key-size 512 --pbkdf argon2id --iter-time 3000 --reduce-device-size 32M /dev/nvme0n1p3
 ```
 LVM an die neue Mapper Größe anpassen:
 ```bash
