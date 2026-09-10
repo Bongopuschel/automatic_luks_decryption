@@ -73,6 +73,7 @@ Nun wird das LUKS-Volume /dev/nvme0n1p3 an den TPM-2.0-Chip gebunden:
 Während des Vorgangs wird das vorhandene LUKS-Passwort abgefragt. Dieses Passwort wird benötigt, um einen neuen LUKS-Keyslot für Clevis anzulegen.
 Nach erfolgreicher Einrichtung kann der neue Keyslot beispielsweise wie folgt angezeigt werden:
 ```bash
+~# clevis luks list -d /dev/nvme0n1p3
 2: tpm2 '{"hash":"sha256","key":"ecc"}'
 ```
 Die verwendete Slotnummer kann von diesem Beispiel abweichen.
