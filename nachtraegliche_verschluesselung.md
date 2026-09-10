@@ -1,4 +1,4 @@
-# Nachträgliche Verschlüsselung eine bestehenden Systems
+# Nachträgliche Verschlüsselung eines bestehenden Systems
 
 # Ausgangslage
 Die Systempartition nvme0n1p3 soll verschlüsselt werden. Die EFI und boot Partition bleiben unverschlüsselt. Die Systempartitionen sind alle BTRFS formatiert:
